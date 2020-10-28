@@ -63,30 +63,28 @@ class Player extends Character {
      * In case game is touchable...
      */
     initDraggingAbility() {
-
         let interactable = interact(this.myImageContainer);
 
-    interactable.draggable({
-        listeners: {
-           start: ev => {
-                //console.log(ev)
-            }, 
-            move: ev => {
-                //console.log(ev);
-            this.dragging = true;
-            if(this.dragging) {console.log("dragging enabled")};
-            this.x += ev.delta.x;
-            //this.y += ev.delta.y;
-            ev.target.style.transform = `translate(${this.x})px`;
-            this.dragging = false;
-            console.log(Boolean(this.dragging));
-            },
-            end: ev => {
-                //console.log(ev)
-            },
-
-}});
-           this.update();
+        interactable.draggable({
+            intertia: true,
+            modifiers: [
+                interact.modifiers.restrictRect({
+                    restriction: 'parent', 
+                    endOnly: false
+                })
+            ],
+            listeners: {
+                start: ev => {
+                    this.dragging = true;
+                }, 
+                move: ev => {
+                    this.x += ev.delta.x;
+                }, 
+                end: ev => {
+                    this.dragging = false;
+                }
+            }
+        })
     }
 
 
