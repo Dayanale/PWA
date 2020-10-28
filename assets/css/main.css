@@ -568,11 +568,6 @@ a {
       grid-template-columns: 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  /*     #swiper_page {
-        .swiper_item, .swiper-wrapper {
-            margin-right: 22px;
-        }
-    } */
 }
 
 #app .full_window {
@@ -643,6 +638,14 @@ a {
           box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   z-index: 2;
+}
+
+.modal_window.modal_light,
+.spinner_window.modal_light {
+  /*    .overlay {
+          //  @extend .bg_color2;
+          //  opacity: .4;
+        } */
 }
 
 .modal_window.modal_light .holder,
@@ -760,6 +763,10 @@ a {
   vertical-align: bottom;
 }
 
+#menu_page .footer .boton2 {
+  margin-bottom: 1em;
+}
+
 .foot_navigation .inline_menu {
   list-style-type: none;
   display: -webkit-box;
@@ -786,9 +793,6 @@ a {
 }
 
 #settings_page .main .settings_grid {
-  /* 
-            display: grid;
-            grid-template: 1fr/ 30px 1fr 30px; */
   width: 75%;
   margin: auto;
   display: -webkit-box;
@@ -920,6 +924,38 @@ a {
 .boton2:active {
   position: relative;
   top: 1px;
+}
+
+.toggle {
+  height: 1rem;
+  width: 2rem;
+  border: 2px solid #666;
+  border-radius: 10px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.toggle.on {
+  border: 2px solid #32F5D2;
+  color: #32F5D2;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.toggle.on span {
+  -webkit-transform: translate(3px, 5px) scale(-0.75);
+          transform: translate(3px, 5px) scale(-0.75);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.toggle span {
+  line-height: 0;
+  -webkit-transform: translate(-13px, 5px) scale(-0.75);
+          transform: translate(-13px, 5px) scale(-0.75);
+  display: block;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 
 /* * {
