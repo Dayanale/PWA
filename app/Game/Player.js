@@ -76,8 +76,8 @@ class Player extends Character {
             this.dragging = true;
             if(this.dragging) {console.log("dragging enabled")};
             this.x += ev.delta.x;
-            this.y += ev.delta.y;
-            ev.target.style.transform = `translate(${this.x}px, ${this.y})px`;
+            //this.y += ev.delta.y;
+            ev.target.style.transform = `translate(${this.x})px`;
             this.dragging = false;
             console.log(Boolean(this.dragging));
             },
